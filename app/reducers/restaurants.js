@@ -39,6 +39,17 @@ export default ((state, action) => {
         selectedId: action.response.id
       });
     }
+    case 'RESTAURANTS:RATE': {
+      const restaurant = {[action.response.id]: action.response};
+      const normalized = normalize(restaurant, [restaurantSchema]);
+      const { restaurants, reviews } = normalized.entities;
+      const rateMerge = _.extend({}, state.all, restaurants);
+      const rateReviews = _.extend({}, state.reviews, _.keyBy(reviews, r => r.id));
+      return Object.assign({}, state, {
+        all: rateMerge,
+        reviews: rateReviews
+      });
+    }
     default: {
       return state || initialState;
     }
@@ -48,6 +59,11 @@ export default ((state, action) => {
 const all = state => state.restaurants.all;
 const selectedId = state => state.restaurants.selectedId;
 const reviews = state => state.restaurants.reviews;
+
+export const getSelectedId = createSelector(
+  selectedId,
+  (selectedId) => selectedId
+)
 
 export const getRestaurants = createSelector(
   all,
