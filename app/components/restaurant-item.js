@@ -1,8 +1,8 @@
-import _ from 'lodash';
 import { connect } from 'ember-redux';
+import { getSelectedRestaurant } from '../reducers/restaurants';
 
 const stateToComputed = (state) => ({
-  restaurant: _.get(state.restaurants.all, state.restaurants.selectedId)
+  restaurant: getSelectedRestaurant(state)
 });
 
 export default connect(stateToComputed)();

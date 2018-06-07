@@ -1,4 +1,7 @@
 import _ from 'lodash';
+import reselect from 'reselect';
+
+const { createSelector } = reselect;
 
 const initialState = {
   all: undefined,
@@ -25,3 +28,17 @@ export default ((state, action) => {
     }
   }
 });
+
+const all = state => state.restaurants.all;
+const selectedId = state => state.restaurants.selectedId;
+
+export const getRestaurants = createSelector(
+  all,
+  (all) => all
+);
+
+export const getSelectedRestaurant = createSelector(
+  all,
+  selectedId,
+  (all, selectedId) => _.get(all, selectedId)
+);
