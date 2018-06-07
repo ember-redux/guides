@@ -1,8 +1,8 @@
 import { connect } from 'ember-redux';
-import { getSelectedRestaurant } from '../reducers/restaurants';
+import { getReviews } from '../reducers/restaurants';
 
 const stateToComputed = (state) => ({
-  restaurant: getSelectedRestaurant(state)
+  reviews: getReviews(state)
 });
 
 export default connect(stateToComputed)();
