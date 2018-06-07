@@ -36,7 +36,6 @@
     "ember-export-application-global": "^2.0.0",
     "ember-fetch": "^5.0.0",
     "ember-load-initializers": "^1.1.0",
-    "ember-lodash-shim": "^2.0.0",
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-redux": "^3.1.1",
     "ember-redux-shim": "^2.5.0",
@@ -52,6 +51,7 @@
     "qunit-dom": "^0.6.2",
     "redux": "3.7.2",
     "redux-thunk": "2.2.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "reselect": "3.0.1"
   },
   "engines": {
