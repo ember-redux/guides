@@ -24,6 +24,7 @@
       "redux": ["node_modules/redux/index.d.ts"],
       "fetch": ["node_modules/ember-fetch/index.d.ts"],
       "reselect": ["node_modules/reselect/lib/index.d.ts"],
+      "normalizr": ["node_modules/normalizr/index.d.ts"],
       "guides/*": [
         "app/*"
       ],
