@@ -23,6 +23,7 @@
       "ember-redux": ["node_modules/ember-redux/index.d.ts"],
       "redux": ["node_modules/redux/index.d.ts"],
       "fetch": ["node_modules/ember-fetch/index.d.ts"],
+      "reselect": ["node_modules/reselect/lib/index.d.ts"],
       "guides/*": [
         "app/*"
       ],

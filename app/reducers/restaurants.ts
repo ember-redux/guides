@@ -1,6 +1,10 @@
 import _ from 'lodash';
+import reselect from 'reselect';
+import { RootState, Dictionary } from '../types/index';
 import { Restaurant, RestaurantState } from '../types/restaurants';
 import { TRANSFORM_LIST, TRANSFORM_DETAIL, DetailAction, ListAction } from '../actions/restaurants';
+
+const { createSelector } = reselect;
 
 const initialState = {
   all: undefined,
@@ -29,3 +33,17 @@ export default ((state: RestaurantState, action: Action): RestaurantState => {
     }
   }
 });
+
+const all = (state: RootState) => state.restaurants.all;
+const selectedId = (state: RootState) => state.restaurants.selectedId;
+
+export const getRestaurants = createSelector(
+  all,
+  (all: Dictionary<Restaurant>) => all
+);
+
+export const getSelectedRestaurant = createSelector(
+  all,
+  selectedId,
+  (all: Dictionary<Restaurant>, selectedId: number) => _.get(all, selectedId)
+);

@@ -2708,6 +2708,13 @@ ember-redux@^3.1.1:
   dependencies:
     ember-cli-babel "^6.8.2"
 
+ember-reselect-shim@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/ember-reselect-shim/-/ember-reselect-shim-2.0.0.tgz#06ba37c04c09259680a0e3e92c565b140a6c9730"
+  dependencies:
+    broccoli-merge-trees "^1.1.4"
+    ember-cli-babel "^6.1.0"
+
 ember-resolver@^4.0.0:
   version "4.5.5"
   resolved "https://registry.npmjs.org/ember-resolver/-/ember-resolver-4.5.5.tgz#6fef0597a42724e4960f37588df8a208ffd3365a"
@@ -5604,6 +5611,10 @@ require-uncached@^1.0.3:
 requires-port@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
+
+reselect@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.npmjs.org/reselect/-/reselect-3.0.1.tgz#efdaa98ea7451324d092b2b2163a6a1d7a9a2147"
 
 resolve-dir@^1.0.0, resolve-dir@^1.0.1:
   version "1.0.1"

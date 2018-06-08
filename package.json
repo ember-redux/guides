@@ -18,10 +18,10 @@
   },
   "devDependencies": {
     "@types/ember": "^2.8.25",
-    "@types/lodash": "^4.14.65",
     "@types/ember-qunit": "^3.0.2",
     "@types/ember-test-helpers": "^0.7.1",
     "@types/ember-testing-helpers": "^0.0.3",
+    "@types/lodash": "^4.14.65",
     "@types/qunit": "^2.5.1",
     "@types/rsvp": "^4.0.1",
     "broccoli-asset-rev": "^2.7.0",
@@ -48,6 +48,7 @@
     "ember-redux": "^3.1.1",
     "ember-redux-shim": "^2.5.0",
     "ember-redux-thunk-shim": "^2.4.0",
+    "ember-reselect-shim": "^2.0.0",
     "ember-resolver": "^4.0.0",
     "ember-source": "~3.2.0",
     "ember-symbol-observable": "1.0.1",
@@ -57,6 +58,7 @@
     "qunit-dom": "^0.6.2",
     "redux": "3.7.2",
     "redux-thunk": "2.2.0",
+    "reselect": "3.0.1",
     "typescript": "^2.9.1"
   },
   "engines": {
