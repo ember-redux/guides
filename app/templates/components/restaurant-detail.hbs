@@ -1,3 +1,11 @@
+<div class="star-rating">
+  <span onclick={{action @rate 1 @selectedId}}>★</span>
+  <span onclick={{action @rate 2 @selectedId}}>★</span>
+  <span onclick={{action @rate 3 @selectedId}}>★</span>
+  <span onclick={{action @rate 4 @selectedId}}>★</span>
+  <span onclick={{action @rate 5 @selectedId}}>★</span>
+</div>
+
 <ul>
   {{#each @reviews as |review|}}
     <li>{{review.rating}} ★</li>

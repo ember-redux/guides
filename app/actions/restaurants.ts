@@ -18,5 +18,15 @@ export interface DetailDispatch {
   (action: DetailAction): void;
 }
 
+export interface RateAction {
+  type: 'RESTAURANTS:RATE';
+  response: Restaurant;
+}
+
+export interface RateDispatch {
+  (action: RateAction): void;
+}
+
+export const RATE_ITEM = 'RESTAURANTS:RATE';
 export const TRANSFORM_LIST = 'RESTAURANTS:TRANSFORM_LIST';
 export const TRANSFORM_DETAIL = 'RESTAURANTS:TRANSFORM_DETAIL';
