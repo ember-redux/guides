@@ -7,8 +7,13 @@ export interface Restaurant {
 
 export interface RestaurantState {
   all: Dictionary<Restaurant>;
+  selectedId: number;
 }
 
 export interface Restaurants {
   restaurants: Array<Restaurant>;
+}
+
+export interface RestaurantHash {
+  restaurants: Restaurant;
 }
