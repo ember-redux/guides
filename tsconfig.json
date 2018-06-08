@@ -25,6 +25,7 @@
       "fetch": ["node_modules/ember-fetch/index.d.ts"],
       "reselect": ["node_modules/reselect/lib/index.d.ts"],
       "normalizr": ["node_modules/normalizr/index.d.ts"],
+      "seamless-immutable": ["node_modules/seamless-immutable-tsdefs/index.d.ts"],
       "guides/*": [
         "app/*"
       ],

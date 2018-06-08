@@ -1,8 +1,9 @@
 import reselect from 'reselect';
-import { RootState, Dictionary } from '../types/index';
+import { RootState, Dictionary, ImmutableState } from '../types/index';
 import { Review, Restaurant, RestaurantState } from '../types/restaurants';
 import { RATE_ITEM, TRANSFORM_LIST, TRANSFORM_DETAIL, RateAction, DetailAction, ListAction } from '../actions/restaurants';
 import { normalize, schema } from 'normalizr';
+import Immutable from 'seamless-immutable';
 
 const { createSelector } = reselect;
 
@@ -11,45 +12,42 @@ const restaurantSchema = new schema.Entity('restaurants', {
   reviews: [reviewSchema]
 });
 
-const initialState = {
+const initialState = Immutable<RestaurantState>({
   all: undefined,
   selectedId: undefined,
   reviews: undefined
-};
+});
 
 type Action = ListAction | DetailAction | RateAction;
 
-export default ((state: RestaurantState, action: Action): RestaurantState => {
+export default ((state: ImmutableState<RestaurantState>, action: Action): ImmutableState<RestaurantState> => {
   switch(action.type) {
     case TRANSFORM_LIST: {
       const normalized = normalize(action.response, [restaurantSchema]);
       const { restaurants, reviews } = normalized.entities;
-      return {
-        ...state,
+      return state.merge({
         all: {...state.all, ...restaurants},
         reviews: {...state.reviews, ...reviews}
-      }
+      });
     }
     case TRANSFORM_DETAIL: {
       const restaurant = {[action.response.id]: action.response};
       const normalized = normalize(restaurant, [restaurantSchema]);
       const { restaurants, reviews } = normalized.entities;
-      return {
-        ...state,
+      return state.merge({
         all: {...state.all, ...restaurants},
         reviews: {...state.reviews, ...reviews},
         selectedId: action.response.id
-      }
+      });
     }
     case RATE_ITEM: {
       const restaurant = {[action.response.id]: action.response};
       const normalized = normalize(restaurant, [restaurantSchema]);
       const { restaurants, reviews } = normalized.entities;
-      return {
-        ...state,
+      return state.merge({
         all: {...state.all, ...restaurants},
         reviews: {...state.reviews, ...reviews}
-      }
+      });
     }
     default: {
       return state || initialState;
